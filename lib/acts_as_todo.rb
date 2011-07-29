@@ -7,12 +7,12 @@ module ActiveRecord
       
       module ClassMethods
         def aatd(options = {})
-          has_many :todos, :as => :work, :conditions => ['todo_id IS NULL']
+          has_many :todos, :as => :work
           include ActiveRecord::Acts::Work::InstanceMethods
         end
         
         def work_to_do()
-          has_many :todos, :as => :worker, :conditions => ['todo_id IS NULL']
+          has_many :todos, :as => :worker
           include ActiveRecord::Acts::Worker::InstanceMethods         
         end
       end
